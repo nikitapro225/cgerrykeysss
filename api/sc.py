@@ -8,6 +8,7 @@ def getKey():
   return responsee.text.split("- ")[1].replace("\n", "")
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
+    key = getKey()
     self.send_response(200)
     self.send_header("Content-type", "text/html")
     self.end_headers()
@@ -45,7 +46,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         }
     });
     function copyKey(){
-    	navigator.clipboard.writeText("123");
+    	navigator.clipboard.writeText(''' + key + '''");
     }
     </script>
     <style>
@@ -115,7 +116,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 <body>
     <div class="main">
         <h1>Ваш ключ</h1>
-        <a>CHERRY123123123</a>
+        <a>''' + key + '''</a>
         <button class="button" onclick="copyKey()">Скопировать</button>
     </div>
 </body>
