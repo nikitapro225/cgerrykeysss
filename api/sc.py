@@ -1,6 +1,11 @@
 import http.server
 import requests
 
+def getKey():
+  url = "https://cgerrydlc.ru/Cherry/FREEMODS/CHILLOWSdfdfd6557657676ytythgfhghghgfhty657657657657tythgfhghghgfhg1r.php"
+  script = requests.get(url, headers=headers).text
+  responsee = requests.get(script.replace("<script>setTimeout(function() { window.location.href='", '').replace("'; }, 1);</script>", ''), headers=headers)
+  return responsee.text.split("- ")[1].replace("\n", "")
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
     self.send_response(200)
