@@ -74,10 +74,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             overflow: hidden;
         }
         
-        .button:hover {
-            background: #8c8c8c;
-            border: 3px solid #adadad;
-        }
+        
         .button .overlay {
             position: absolute;
             background: #fff;
@@ -86,6 +83,13 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             transform: translate(-50%, -50%);
             border-radius: 50%;
             animation: blink 0.5s linear;
+        }
+
+		@media (hover: hover) {
+        	.button:hover {
+            	background: #8c8c8c;
+            	border: 3px solid #adadad;
+            }
         }
 
         @keyframes blink {
