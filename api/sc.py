@@ -111,4 +111,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     </div>
 </body>
 </html>''', "utf-8"))
-  do_GET = handleRequest
+
+
+handler = app = RequestHandler
