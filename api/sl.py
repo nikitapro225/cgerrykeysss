@@ -47,7 +47,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         }
     });
     function copyKey(){
-    	navigator.clipboard.writeText(''' + key + '''");
+    	navigator.clipboard.writeText("''' + key + '''");
     }
     </script>
     <style>
