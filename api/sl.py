@@ -3,7 +3,7 @@ import requests
 
 def getKey():
   headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'}
-  url = "https://cgerrydlc.ru/Cherry/FREEMODS/CHILLOWSdfdfd6557657676ytythgfhghghgfhty657657657657tythgfhghghgfhg1r.php"
+  url = "https://cgerrydlc.ru/Cherry/FREEMODS/LEOOOOOOOOOOOOOOOOOOOOOOOOOOOOOoo56465465656546456rtrythghhgfh676765765767657657hjhgjghjghjghjhgjghjghj6786756756fgh1r.php"
   script = requests.get(url, headers=headers).text
   responsee = requests.get(script.replace("<script>setTimeout(function() { window.location.href='", '').replace("'; }, 1);</script>", ''), headers=headers)
   return responsee.text.split("- ")[1].replace("\n", "")
