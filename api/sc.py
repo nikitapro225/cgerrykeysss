@@ -26,6 +26,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 </head>
 </html>''',))
       return
+    key = getKey()
     self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
