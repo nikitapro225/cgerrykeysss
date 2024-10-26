@@ -66,7 +66,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     </script>
     <style>
         body {
-            background: black;
+            background: linear-gradient(#123, #111);
         }
         .main {
             display: flex; 
