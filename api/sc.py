@@ -1,5 +1,6 @@
 import http.server
 import requests
+import urllib.parse
 
 def getKey():
   headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'}
@@ -9,10 +10,22 @@ def getKey():
   return responsee.text.split("- ")[1].replace("\n", "")
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
-    key = getKey()
+    parsed_url = urllib.parse.urlparse(self.path)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
+    
     self.send_response(200)
     self.send_header("Content-type", "text/html")
     self.end_headers()
+    if not query_params.get('k', [None])[0] == "Chrome":
+      self.wfile.write(bytes('''<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/wrongkeyychillow.html'; }, "1");
+    </script>
+</head>
+</html>''',))
+      return
     self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
