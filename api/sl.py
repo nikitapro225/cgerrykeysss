@@ -21,7 +21,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 <html>
 <head>
     <script>
-    setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/keeyinputleo.html'; }, "1");
+    setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/wrongkeyyleoo.html'; }, "1");
     </script>
 </head>
 </html>''', "utf-8"))
