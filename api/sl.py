@@ -10,7 +10,7 @@ def getKey():
   return responsee.text.split("- ")[1].replace("\n", "")
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
-	  parsed_url = urllib.parse.urlparse(self.path)
+    parsed_url = urllib.parse.urlparse(self.path)
     query_params = urllib.parse.parse_qs(parsed_url.query)
     key = getKey()
     self.send_response(200)
