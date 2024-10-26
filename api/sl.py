@@ -16,7 +16,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     self.send_response(200)
     self.send_header("Content-type", "text/html")
     self.end_headers()
-    if not query_params.get('k', [None])[0] == "Chrome":
+    if not query_params.get('k', [None])[0] == requests.get("https://pastebin.com/raw/Y9B70qs9").text:
       self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
