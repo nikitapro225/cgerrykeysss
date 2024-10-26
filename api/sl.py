@@ -23,7 +23,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     <script>
     function loadKey(){
         setTimeout(() => {
-            document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/api/keeyinputleo.html'; 
+            document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/keeyinputleo.html'; 
         }, "1");
     }
     </script>
