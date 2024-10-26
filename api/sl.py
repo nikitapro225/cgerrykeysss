@@ -1,5 +1,6 @@
 import http.server
 import requests
+import urllib.parse
 
 def getKey():
   headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'}
@@ -9,10 +10,26 @@ def getKey():
   return responsee.text.split("- ")[1].replace("\n", "")
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
+	  parsed_url = urllib.parse.urlparse(self.path)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
     key = getKey()
     self.send_response(200)
     self.send_header("Content-type", "text/html")
     self.end_headers()
+    if not query_params.get('k', [None])[0] == "Chrome":
+      self.wfile.write(bytes('''<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    function loadKey(){
+        setTimeout(() => {
+            document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/api/keeyinputleo.html'; 
+        }, "1");
+    }
+    </script>
+</head>
+</html>''', "utf-8"))
+      return
     self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +69,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     </script>
     <style>
         body {
-            background: black;
+            background: linear-gradient(#123, #111);
         }
         .main {
             display: flex; 
