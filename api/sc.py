@@ -59,6 +59,10 @@ setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.verce
                 });
             });
         }
+	if (window.history && window.history.replaceState) {
+            let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({}, document.title, newUrl);
+        }
     });
     function copyKey(){
     	navigator.clipboard.writeText("''' + key + '''");
