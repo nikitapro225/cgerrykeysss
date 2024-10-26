@@ -20,11 +20,11 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
       self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
-    <script>
-    setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/wrongkeyychillow.html'; }, "1");
-    </script>
+<script>
+setTimeout(() => {document.location.href = 'https://cgerrykeysss-downloadd.vercel.app/wrongkeyychillow.html'; }, "1");
+</script>
 </head>
-</html>''',))
+</html>''', "utf-8"))
       return
     key = getKey()
     self.wfile.write(bytes('''<!DOCTYPE html>
