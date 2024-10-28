@@ -12,7 +12,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   def do_GET(self):
     parsed_url = urllib.parse.urlparse(self.path)
     query_params = urllib.parse.parse_qs(parsed_url.query)
-    key = getKey()
+    
     self.send_response(200)
     self.send_header("Content-type", "text/html")
     self.end_headers()
@@ -26,6 +26,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 </head>
 </html>''', "utf-8"))
       return
+    key = getKey()
+    print(key)
     self.wfile.write(bytes('''<!DOCTYPE html>
 <html>
 <head>
